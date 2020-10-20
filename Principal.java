@@ -56,7 +56,7 @@ public class Principal{
                 System.out.println(Sensor.sensoresTemperatura());
             } else if (num==666){
                 System.out.println("Sensores de tipo temperatura ordenados por valor: ");
-                System.out.println(Sensor.toStringSensoresOrdenados(Sensor.arregloTemperatura()));
+                System.out.println(Sensor.toStringSensoresOrdenados(Sensor.arregloTemperaturas()));
             }
 
         }

@@ -73,21 +73,40 @@ public class Sensor{
         return temperaturas;
     }
 
-    public static ArrayList<Sensor> arregloTemperatura(){
+    public static Sensor[] arregloTemperaturas(){
         ArrayList<Sensor>temperaturas = new ArrayList();
         for(int i=0; i<posAnadir;i++){
+            int j=0;
             if((sensores[i].getTipo()).equals("temperatura")){
                 temperaturas.add(sensores[i]);
+                j++;
             }
         }
-        Collections.sort(temperaturas,Comparator.comparing(Sensor::getValor));
-        return temperaturas;
+        int size = temperaturas.size();
+        Sensor temp;
+        Sensor[] ordenados = new Sensor [size];
+        for(int i=0; i<size; i++){
+            ordenados[i] = temperaturas.get(i);
+        }
+        
+        for (int j=1; j<ordenados.length; j++){
+            for (int k=0; k<ordenados.length-j; k++){
+                if (ordenados[k].getValor()>ordenados[k+1].getValor()){
+                    temp = ordenados[k];
+                    ordenados[k] = ordenados [k+1];
+                    ordenados[k+1] = temp;
+                }
+            }
+        }
+        
+        return ordenados;
     }
 
-    public static String toStringSensoresOrdenados(ArrayList<Sensor>temperatura){
+
+    public static String toStringSensoresOrdenados(Sensor[]temperatura){
         String datosOrdenados= "";
-        for(int i=0; i<temperatura.size(); i++){
-            datosOrdenados = datosOrdenados + (temperatura.get(i).toString());
+        for(int i=0; i<temperatura.length; i++){
+            datosOrdenados = datosOrdenados + (temperatura[i].toString());
         }
         return datosOrdenados;
     }
