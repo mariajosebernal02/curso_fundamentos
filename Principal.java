@@ -27,13 +27,13 @@ public class Principal{
                     System.out.println("Error base de datos llena");
                 }
             } else if (num==2){
-                System.out.println("Datos Vehiculos: ");
+                System.out.println("Datos Vehiculos (modelo, marca, valor comercial, color): ");
                 System.out.println(Vehiculo.toStringVehiculos());
             } else if (num==3){
                 System.out.println("Cantidad de vehículos: ");
                 System.out.println(Vehiculo.cantidadVehiculos());
             } else if (num==4){
-                System.out.println("Vehiculos color verde: ");
+                System.out.println("Vehiculos color verde (modelo, marca, valor comercial, color): ");
                 System.out.println(Vehiculo.vehiculosVerdes());
             } else if (num==5){
                 if (Sensor.posAnadir<Sensor.TAMANO){
@@ -46,17 +46,17 @@ public class Principal{
                     System.out.println("Error base de datos llena");
                 }
             } else if (num==6){
-                System.out.println("Datos Sensores: ");
+                System.out.println("Datos Sensores (tipo, valor): ");
                 System.out.println(Sensor.toStringSensores());
             } else if (num==7){
                 System.out.println("Cantidad de sensores: ");
                 System.out.println(Sensor.cantidadSensores());
             } else if (num==8){
-                System.out.println("Sensores de tipo temperatura: ");
+                System.out.println("Sensores de tipo temperatura (tipo, valor): ");
                 System.out.println(Sensor.sensoresTemperatura());
             } else if (num==666){
-                System.out.println("Sensores de tipo temperatura ordenados por valor: ");
-                System.out.println(Sensor.toStringSensoresOrdenados(Sensor.arregloTemperaturas()));
+                System.out.println("Sensores de tipo temperatura ordenados por valor (tipo, valor): ");
+                System.out.println(Sensor.toStringTemperaturasOrdenados(Sensor.arregloTemperaturas()));
             }
 
         }

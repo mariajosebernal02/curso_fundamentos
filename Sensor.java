@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Collections;
 public class Sensor{
 
     private String tipo;
@@ -102,8 +100,7 @@ public class Sensor{
         return ordenados;
     }
 
-
-    public static String toStringSensoresOrdenados(Sensor[]temperatura){
+    public static String toStringTemperaturasOrdenados(Sensor[]temperatura){
         String datosOrdenados= "";
         for(int i=0; i<temperatura.length; i++){
             datosOrdenados = datosOrdenados + (temperatura[i].toString());
