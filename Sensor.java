@@ -4,20 +4,20 @@ public class Sensor{
     private String tipo;
     private double valor;
     public static Sensor[] sensores = new Sensor[8];
-    public final static int TAMANO = 8;
+    public static final int TAMANO = 8;
     public static int posAnadir = 0;
     public static Sensor[] ordenados;
 
     public Sensor(){
-        this.sensores[this.posAnadir] = this;
-        this.posAnadir++;
+        Sensor.sensores[Sensor.posAnadir] = this;
+        Sensor.posAnadir++;
     }
 
     public Sensor(String t, double v){
         this.tipo =t;
         this.valor = v;
-        this.sensores[this.posAnadir] = this;
-        this.posAnadir++;
+        Sensor.sensores[Sensor.posAnadir] = this;
+        Sensor.posAnadir++;
     }
 
     public void setTipo(String t){
@@ -43,8 +43,8 @@ public class Sensor{
 
     public static String toStringSensores(){
         String datosTotales = "";
-        for(int i=0; i<posAnadir; i++){
-            datosTotales = datosTotales + sensores[i].toString();
+        for(int i=0; i<Sensor.posAnadir; i++){
+            datosTotales = datosTotales + Sensor.sensores[i].toString();
         }
         if (datosTotales.equals("")){
             datosTotales = "no hay sensores";
@@ -53,15 +53,15 @@ public class Sensor{
     }
 
     public static int cantidadSensores(){
-        return posAnadir;
+        return Sensor.posAnadir;
     }
 
     public static String sensoresTemperatura(){
         String temperaturas = "";
-        if(posAnadir!=0){
-            for (int i=0; i<posAnadir; i++){
-                if((sensores[i].getTipo()).equals("temperatura")){
-                    temperaturas = temperaturas + sensores[i].toString();
+        if(Sensor.posAnadir!=0){
+            for (int i=0; i<Sensor.posAnadir; i++){
+                if((Sensor.sensores[i].getTipo()).equals("temperatura")){
+                    temperaturas = temperaturas + Sensor.sensores[i].toString();
                 }
             }
         } 
@@ -73,10 +73,10 @@ public class Sensor{
 
     public static Sensor[] arregloTemperaturas(){
         ArrayList<Sensor>temperaturas = new ArrayList();
-        for(int i=0; i<posAnadir;i++){
+        for(int i=0; i<Sensor.posAnadir;i++){
             int j=0;
-            if((sensores[i].getTipo()).equals("temperatura")){
-                temperaturas.add(sensores[i]);
+            if((Sensor.sensores[i].getTipo()).equals("temperatura")){
+                temperaturas.add(Sensor.sensores[i]);
                 j++;
             }
         }
@@ -91,7 +91,7 @@ public class Sensor{
             for (int k=0; k<ordenados.length-j; k++){
                 if (ordenados[k].getValor()>ordenados[k+1].getValor()){
                     temp = ordenados[k];
-                    ordenados[k] = ordenados [k+1];
+                    ordenados[k] = ordenados[k+1];
                     ordenados[k+1] = temp;
                 }
             }
