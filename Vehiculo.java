@@ -5,7 +5,7 @@ public class Vehiculo{
     private double valorComercial;
     private String color;
     public static Vehiculo[] vehiculos = new Vehiculo[10];
-    public static final int TAMANO = 10;
+    public final static int TAMANO = 10;
     public static int posAnadir = 0;
 
     public Vehiculo(){

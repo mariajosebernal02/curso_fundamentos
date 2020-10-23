@@ -4,7 +4,7 @@ public class Sensor{
     private String tipo;
     private double valor;
     public static Sensor[] sensores = new Sensor[8];
-    public static final int TAMANO = 8;
+    public final static int TAMANO = 8;
     public static int posAnadir = 0;
     public static Sensor[] ordenados;
 
